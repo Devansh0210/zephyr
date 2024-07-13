@@ -27,7 +27,8 @@ LOG_MODULE_REGISTER(soc);
 const PowerCC26X2_Config PowerCC26X2_config = {
 #if defined(CONFIG_IEEE802154_CC13XX_CC26XX) \
 	|| defined(CONFIG_BLE_CC13XX_CC26XX) \
-	|| defined(CONFIG_IEEE802154_CC13XX_CC26XX_SUB_GHZ)
+	|| defined(CONFIG_IEEE802154_CC13XX_CC26XX_SUB_GHZ) \
+	|| defined(CONFIG_PROP_RADIO_CC13XX_CC26XX)
 	.policyInitFxn      = NULL,
 	.policyFxn          = NULL,
 	.calibrateFxn       = &PowerCC26XX_calibrate,

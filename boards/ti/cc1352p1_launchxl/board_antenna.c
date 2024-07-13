@@ -11,15 +11,18 @@
 
 #define DT_DRV_COMPAT skyworks_sky13317
 
+#define LOG_LEVEL 0
 #include <zephyr/init.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/pinctrl.h>
+#include <zephyr/logging/log.h>
 
 #include <ti/drivers/rf/RF.h>
 #include <driverlib/rom.h>
 #include <driverlib/interrupt.h>
 
+LOG_MODULE_REGISTER(board_antenna);
 /* custom pinctrl states for the antenna mux */
 #define PINCTRL_STATE_ANT_24G		1
 #define PINCTRL_STATE_ANT_24G_PA	2
@@ -73,6 +76,7 @@ int board_antenna_init(const struct device *dev)
 	for (i = 0; i < ARRAY_SIZE(ant_gpios); i++) {
 		gpio_pin_configure_dt(&ant_gpios[i], 0);
 	}
+	LOG_INF("antenna inited");
 	return 0;
 }
 
@@ -129,6 +133,8 @@ void board_cc13xx_rf_callback(RF_Handle client, RF_GlobalEvent events, void *arg
 				gpio_pin_configure_dt(&ant_gpios[BOARD_ANT_GPIO_24G], 1);
 			}
 		}
+
+		LOG_INF("antenna callback");
 	} else {
 		pinctrl_apply_state(ant_pcfg, PINCTRL_STATE_DEFAULT);
 	}
