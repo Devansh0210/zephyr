@@ -139,8 +139,8 @@ manifest:
       groups:
         - fs
     - name: hal_ti
-      remote: devector
-      revision: 42e23e39c6b9ba133aad92e21d7c21ffda46de41
+      remote: upstream
+      revision: 258652a3ac5d7df68ba8df20e4705c3bd98ede38
       path: modules/hal/ti
       groups:
         - hal
