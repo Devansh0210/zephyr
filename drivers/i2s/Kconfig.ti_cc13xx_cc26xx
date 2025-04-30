@@ -1,0 +1,4 @@
+menuconfig I2S_CC13XX_CC26XX
+	bool "CC13XX_CC26XX MCU I2S controller driver"
+	default y
+	depends on DT_HAS_TI_CC13XX_CC26XX_I2S_ENABLED

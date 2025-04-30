@@ -1,0 +1,12 @@
+description: TI-CC13XX I2S
+
+compatible: "ti,cc13xx-cc26xx-i2s"
+
+include: [i2s-controller.yaml]
+
+properties:
+  reg:
+    required: true
+
+  interrupts:
+    required: true
