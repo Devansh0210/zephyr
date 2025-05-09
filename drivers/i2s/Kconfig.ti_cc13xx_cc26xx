@@ -2,3 +2,16 @@ menuconfig I2S_CC13XX_CC26XX
 	bool "CC13XX_CC26XX MCU I2S controller driver"
 	default y
 	depends on DT_HAS_TI_CC13XX_CC26XX_I2S_ENABLED
+	select PINCTRL
+
+if I2S_CC13XX_CC26XX
+
+config I2S_CC13XX_CC26XX_RX_BLOCK_COUNT
+	int "RX queue length"
+	default 4
+
+config I2S_CC13XX_CC26XX_TX_BLOCK_COUNT
+	int "TX queue length"
+	default 4
+
+endif # I2S_CC13XX_CC26XX

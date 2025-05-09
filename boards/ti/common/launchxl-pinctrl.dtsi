@@ -69,4 +69,22 @@
 		pinmux = <11 IOC_PORT_MCU_SSI0_FSS>;
 		bias-disable;
 	};
+
+	/* I2S */
+	i2s0_din_default: i2s0_din_default {
+		pinmux = <6 IOC_PORT_MCU_I2S_AD0>;
+		bias-disable;
+		input-enable;
+        };
+
+	i2s0_bclk_default: i2s0_bclk_default {
+		pinmux = <7 IOC_PORT_MCU_I2S_BCLK>;
+		bias-disable;
+	};
+
+	i2s0_wclk_default: i2s0_wclk_default {
+		pinmux = <10 IOC_PORT_MCU_I2S_WCLK>;
+		bias-disable;
+	};
+
 };

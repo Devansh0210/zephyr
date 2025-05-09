@@ -113,3 +113,10 @@
 &wdt0 {
 	status = "okay";
 };
+
+&i2s0 {
+	status = "okay";
+	pinctrl-0 = <&i2s0_din_default &i2s0_bclk_default &i2s0_wclk_default>;
+	// pinctrl-0 = <&spi0_cs_default>;
+	pinctrl-names = "default";
+};

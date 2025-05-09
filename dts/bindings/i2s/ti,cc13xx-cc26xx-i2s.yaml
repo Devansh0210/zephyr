@@ -2,7 +2,7 @@ description: TI-CC13XX I2S
 
 compatible: "ti,cc13xx-cc26xx-i2s"
 
-include: [i2s-controller.yaml]
+include: [i2s-controller.yaml, pinctrl-device.yaml, base.yaml]
 
 properties:
   reg:
@@ -10,3 +10,15 @@ properties:
 
   interrupts:
     required: true
+
+  pinctrl-0:
+    required: true
+
+  pinctrl-names:
+    required: true
+
+  mck-enabled:
+    type: boolean
+    description: |
+      Master Clock Output function.
+      An mck pin must be listed within pinctrl-0 when enabling this property.
